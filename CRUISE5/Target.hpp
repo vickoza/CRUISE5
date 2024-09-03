@@ -28,7 +28,7 @@ protected:
 	//be written to 'combus' 'packets'
 	int* target_com_ind = nullptr; int target_com_count = 0;
 public:
-	Target();
+	Target() = delete;
 	Target(Module* module_list, int num_modules);
 	virtual~Target();
 

@@ -37,7 +37,7 @@ Cruise::Cruise(Module* module_list, int num_modules, int num_target, int num_sat
 	int j(0);
 
 	//creating module-variable array
-	try { cruise = new Variable[NCRUISE]; }
+	try { cruise.resize(NCRUISE); }
 	catch (bad_alloc xa) { cerr << "*** Error: cruise[] allocation failed ***\n"; exit(1); }
 
 	//zeroing module-variable array
@@ -142,9 +142,7 @@ Cruise::Cruise(Module* module_list, int num_modules, int num_target, int num_sat
 
 Cruise::~Cruise()
 {
-	delete[] cruise;
 	delete[] cruise3;
-	delete[] round3;
 	delete[] scrn_cruise3;
 	delete[] plot_cruise3;
 	delete[] com_cruise3;
@@ -244,11 +242,11 @@ void Cruise::vehicle_array()
 	}
 	//load nonempty slots from cruise array into cruise3 array	
 	int m = 0;
-	for (i = 0; i < NCRUISE; i++)
+	for (auto& item : cruise)
 	{
-		if (strcmp(cruise[i].get_name(), test))
+		if (strcmp(item.get_name(), test))
 		{
-			cruise3[k + m] = cruise[i];
+			cruise3[k + m] = item;
 			m++;
 		}
 	}
@@ -486,25 +484,25 @@ void Cruise::vehicle_data(fstream& input)
 					}
 				}
 			}
-			for (i = 0; i < NCRUISE; i++)
+			for (auto& item : cruise)
 			{
-				buff = cruise[i].get_name();
+				buff = item.get_name();
 				if (!strcmp(buff, read))
 				{
 					input >> data;
 					//checking for integers
-					integer = cruise[i].get_type();
+					integer = item.get_type();
 					if (!strcmp(integer, "int"))
 					{
 						//loading interger value
 						int_data = (int)data;
-						cruise[i].gets(int_data);
+						item.gets(int_data);
 						input.getline(line_clear, CHARL, '\n');
 					}
 					else
 					{
 						//loading real value
-						cruise[i].gets(data);
+						item.gets(data);
 						input.getline(line_clear, CHARL, '\n');
 					}
 				}
@@ -534,18 +532,17 @@ void Cruise::vehicle_data(fstream& input)
 				//reading name of watch variable
 				input >> name;
 				//determining it's module-variable
-				int m;
-				for (m = 0; m < NROUND3; m++)
+				for (int m = 0; m < NROUND3; m++)
 				{
 					buff = round3[m].get_name();
 					if (!strcmp(buff, name))
 						variable = &round3[m];
 				}
-				for (m = 0; m < NCRUISE; m++)
+				for (auto& item : cruise)
 				{
-					buff = cruise[m].get_name();
+					buff = item.get_name();
 					if (!strcmp(buff, name))
-						variable = &cruise[m];
+						variable = &item;
 				}
 
 				//reading other criteria
@@ -570,8 +567,7 @@ void Cruise::vehicle_data(fstream& input)
 					}
 					else
 					{
-						int k;
-						for (k = 0; k < NROUND3; k++)
+						for (int k = 0; k < NROUND3; k++)
 						{
 							buff = round3[k].get_name();
 							if (!strcmp(buff, buff2))
@@ -589,7 +585,7 @@ void Cruise::vehicle_data(fstream& input)
 								}
 							}
 						}
-						for (k = 0; k < NCRUISE; k++)
+						for (int k = 0; k < NCRUISE; k++)
 						{
 							buff = cruise[k].get_name();
 							if (!strcmp(buff, buff2))

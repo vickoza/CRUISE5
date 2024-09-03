@@ -11,14 +11,12 @@ using namespace std;
 Round3::Round3()
 {
 	//creating module-variable array
-	try { round3 = new Variable[NROUND3]; }
+	try { round3.resize(NROUND3); }
 	catch (bad_alloc xa) { cerr << "*** Error: round3[] allocation failed ***\n"; exit(1); }
 
 	//zeroing module-variable array
-	for (int i = 0; i < NROUND3; i++)round3[i].init("empty", 0, " ", " ", " ", " ");
+	for (auto& item: round3)item.init("empty", 0, " ", " ", " ", " ");
 }
-
-using namespace std;
 
 ///////////////////////////////////////////////////////////////////////////////
 //Defining of environmental module-variables

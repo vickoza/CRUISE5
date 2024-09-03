@@ -27,7 +27,7 @@ protected:
 	int* satellite_com_ind = nullptr; int satellite_com_count = 0;
 
 public:
-	Satellite();
+	Satellite() =delete;
 	Satellite(Module* module_list, int num_modules);
 	virtual~Satellite();
 

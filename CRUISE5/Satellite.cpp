@@ -11,11 +11,11 @@ using namespace std;
 Satellite::Satellite(Module* module_list, int num_modules)
 {
 	//creating module-variable array
-	try { satellite = new Variable[NSATELLITE]; }
+	try { satellite.resize(NSATELLITE); }
 	catch (bad_alloc xa) { cerr << "*** Error: satellite[] allocation failed ***\n"; exit(1); }
 
 	//zeroing module-variable array
-	for (int i = 0; i < NSATELLITE; i++)satellite[i].init("empty", 0, " ", " ", " ", " ");
+	for (auto& item : satellite )item.init("empty", 0, " ", " ", " ", " ");
 	//calling initializer modules to build 'round3' and 'satellite' arrays
 	//and make other initial calculations 
 
@@ -52,8 +52,6 @@ Satellite::Satellite(Module* module_list, int num_modules)
 
 Satellite::~Satellite()
 {
-	delete[] satellite;
-	delete[] round3;
 	delete[] round3_com_ind;
 	delete[] satellite_com_ind;
 	delete[] com_satellite3;

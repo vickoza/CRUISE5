@@ -67,7 +67,7 @@ protected:
 	Datadeck proptable;
 
 public:
-	Cruise() {};
+	Cruise() = delete;
 	Cruise(Module* module_list, int num_modules, int num_target, int num_satellite);
 	virtual~Cruise();
 

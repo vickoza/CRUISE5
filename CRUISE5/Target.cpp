@@ -11,11 +11,11 @@ using namespace std;
 Target::Target(Module* module_list, int num_modules)
 {
 	//creating module-variable array
-	try { target = new Variable[NTARGET]; }
+	try { target.resize(NTARGET); }
 	catch (bad_alloc xa) { cerr << "*** Error: target[] allocation failed ***\n"; exit(1); }
 
 	//zeroing module-variable array
-	for (int i = 0; i < NTARGET; i++)target[i].init("empty", 0, " ", " ", " ", " ");
+	for (auto item : target) item.init("empty", 0, " ", " ", " ", " ");
 	//calling initializer modules to build 'round3' and 'target' arrays
 	//and make other initial calculations 
 
@@ -51,8 +51,6 @@ Target::Target(Module* module_list, int num_modules)
 ///////////////////////////////////////////////////////////////////////////////
 Target::~Target()
 {
-	delete[] target;
-	delete[] round3;
 	delete[] round3_com_ind;
 	delete[] target_com_ind;
 	delete[] com_target3;

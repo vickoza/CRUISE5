@@ -6,7 +6,7 @@
 #include "Packet.hpp"
 #include "Document.hpp"
 #include <fstream>
-
+#include <vector>
 ///////////////////////////////////////////////////////////////////////////////
 //Abstract base class: Cadac
 //
@@ -22,19 +22,19 @@ protected:
 
 	//module-variable array of class 'Round3'
 	//first 10 locations are reserved for executive variables
-	Variable* round3 = nullptr;
+	std::vector<Variable> round3;
 
 	//array of module-variables as defined in class 'Cruise'
 	//first 10 locations are reserved for executive variables
-	Variable* cruise = nullptr;
+	std::vector<Variable> cruise;
 
 	//Array of module-variables as defined in class 'Target'
 	//first 10 locations are reserved for executive variables
-	Variable* target = nullptr;
+	std::vector<Variable> target;
 
 	//Array of module-variables as defined in class 'Satellite'
 	//first  10 locations are  reserved for executive variables
-	Variable* satellite = nullptr;
+	std::vector<Variable> satellite;
 
 
 public:
