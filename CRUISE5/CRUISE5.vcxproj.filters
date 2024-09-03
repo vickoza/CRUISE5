@@ -53,9 +53,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="class_hierarchy.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="global_constants.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -68,42 +65,60 @@
     <ClInclude Include="Matrix.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Datadeck.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cadac.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Round3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cruise.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Target.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Satellite.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vehicle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="class_functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cruise_functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cruise_modules.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="execution.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="global_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="round3_modules.cpp">
+    <ClCompile Include="Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="satellite_functions.cpp">
+    <ClCompile Include="Datadeck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="satellite_modules.cpp">
+    <ClCompile Include="Round3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="target_functions.cpp">
+    <ClCompile Include="Cruise.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="target_modules.cpp">
+    <ClCompile Include="Target.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Satellite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vehicle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utility_functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

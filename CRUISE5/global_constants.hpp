@@ -8,6 +8,12 @@
 
 #ifndef global_constants__HPP
 #define global_constants__HPP
+#ifdef DIAGNOSTICS
+constexpr auto enableDiagostics{ true };
+#else
+constexpr auto enableDiagostics{ false };
+#endif // DIAGNOSTICS
+
 
 //global constants to be used in the simulation
 double const REARTH=6370987.308;		//mean earth radius - m

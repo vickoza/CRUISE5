@@ -7,7 +7,9 @@
 //060524 Included satellites, PZi
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "class_hierarchy.hpp"
+#include "Cruise.hpp"
+#include "Target.hpp"
+#include "Satellite.hpp"
 #include <vector>
 #include <sstream>
 using namespace std;

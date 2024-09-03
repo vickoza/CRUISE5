@@ -65,7 +65,7 @@ public:
 	Variable()
 	{
 		VEC.dimension(3,1);MAT.dimension(3,3);
-		strcpy(name,"empty");
+		strcpy_s(name,"empty");
 		error[0]=' ';error[1]='\0';
 		int dum=1;
 	}; 
@@ -198,7 +198,7 @@ public:
 	//
 	//020911 Created by Peter Zipfel
 	///////////////////////////////////////////////////////////////////////////
-	void put_error(const char *error_code){strcpy(error,error_code);}
+	void put_error(const char *error_code){strcpy_s(error,error_code);}
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -461,7 +461,7 @@ private:
 public:
 	Document()
 	{
-		strcpy(name,"end_array");
+		strcpy_s(name,"end_array");
 	}
 	~Document(){};
 
@@ -512,28 +512,28 @@ public:
 	//
 	//020913 Created by Peter Zipfel
 	///////////////////////////////////////////////////////////////////////////
-	void put_name(const char *na){strcpy(name,na);}
+	void put_name(const char *na){strcpy_s(name,na);}
 	
 	///////////////////////////////////////////////////////////////////////////
 	//Putting 'type' of module-variable  
 	//
 	//020913 Created by Peter Zipfel
 	///////////////////////////////////////////////////////////////////////////
-	void put_type(const char *ty){strcpy(type,ty);}
+	void put_type(const char *ty){strcpy_s(type,ty);}
 	
 	///////////////////////////////////////////////////////////////////////////
 	//Putting 'def' of module-variable  
 	//
 	//020913 Created by Peter Zipfel
 	///////////////////////////////////////////////////////////////////////////
-	void put_def(const char *de){strcpy(def,de);}
+	void put_def(const char *de){strcpy_s(def,de);}
 	
 	///////////////////////////////////////////////////////////////////////////
 	//Putting 'mod' of module-variable  
 	//
 	//020913 Created by Peter Zipfel
 	///////////////////////////////////////////////////////////////////////////
-	void put_mod(const char *mo){strcpy(mod,mo);}	
+	void put_mod(const char *mo){strcpy_s(mod,mo);}	
 };
 
 
