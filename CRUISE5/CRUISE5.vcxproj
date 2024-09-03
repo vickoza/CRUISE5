@@ -145,14 +145,18 @@
     <ClInclude Include="Cadac.hpp" />
     <ClInclude Include="Cruise.hpp" />
     <ClInclude Include="Datadeck.hpp" />
+    <ClInclude Include="Document.hpp" />
+    <ClInclude Include="Event.hpp" />
     <ClInclude Include="global_constants.hpp" />
     <ClInclude Include="global_header.hpp" />
     <ClInclude Include="Matrix.hpp" />
+    <ClInclude Include="Packet.hpp" />
     <ClInclude Include="Round3.hpp" />
     <ClInclude Include="Satellite.hpp" />
     <ClInclude Include="Table.hpp" />
     <ClInclude Include="Target.hpp" />
     <ClInclude Include="utility_header.hpp" />
+    <ClInclude Include="Variable.hpp" />
     <ClInclude Include="Vehicle.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +169,7 @@
     <ClCompile Include="Satellite.cpp" />
     <ClCompile Include="Target.cpp" />
     <ClCompile Include="utility_functions.cpp" />
+    <ClCompile Include="Variable.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,7 @@
 #include "Satellite.hpp"
 
+using namespace std;
+
 ///////////////////////////////////////////////////////////////////////////////
 //Constructor initializing the modules and the module-variable arrays
 //				  

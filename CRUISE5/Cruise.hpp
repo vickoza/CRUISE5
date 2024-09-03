@@ -1,5 +1,6 @@
 #pragma once
 #include "Round3.hpp"
+#include "Event.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -76,17 +77,17 @@ public:
 	void scrn_array() override;
 	void plot_array() override;
 	void scrn_banner() override;
-	void tabout_banner(ofstream& ftabout, const char* title) override;
-	void tabout_data(ofstream& ftabout) override;
-	void vehicle_data(fstream& input) override;
+	void tabout_banner(std::ofstream& ftabout, const char* title) override;
+	void tabout_data(std::ofstream& ftabout) override;
+	void vehicle_data(std::fstream& input) override;
 	void read_tables(const char* file_name, Datadeck& datatable) override;
 	void scrn_index_arrays() override;
 	void scrn_data() override;
-	void plot_banner(ofstream& fplot, const char* title) override;
+	void plot_banner(std::ofstream& fplot, const char* title) override;
 	void plot_index_arrays() override;
-	void plot_data(ofstream& fplot, bool merge) override;
+	void plot_data(std::ofstream& fplot, bool merge) override;
 	void event(const char* options) override;
-	void document(ostream& fdoc, const char* title, Document* doc_cruise3) override;
+	void document(std::ostream& fdoc, const char* title, Document* doc_cruise3) override;
 	void com_index_arrays() override;
 	Packet loading_packet_init(int num_cruise, int num_target, int num_satellite) override;
 	Packet loading_packet(int num_cruise, int num_target, int num_satellite) override;

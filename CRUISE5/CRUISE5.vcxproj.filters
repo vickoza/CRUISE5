@@ -89,6 +89,18 @@
     <ClInclude Include="Vehicle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Variable.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Document.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="execution.cpp">
@@ -119,6 +131,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utility_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Variable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -36,22 +36,22 @@ public:
 	virtual void scrn_array() override {};
 	virtual void plot_array() override {};
 	virtual void scrn_banner() override {};
-	virtual void tabout_banner(ofstream& ftabout, const char* title) override {};
-	virtual void tabout_data(ofstream& ftabout) override {};
+	virtual void tabout_banner(std::ofstream& ftabout, const char* title) override {};
+	virtual void tabout_data(std::ofstream& ftabout) override {};
 	virtual void scrn_index_arrays() override {};
 	virtual void scrn_data() override {};
-	virtual void plot_banner(ofstream& fplot, const char* title) override {};
+	virtual void plot_banner(std::ofstream& fplot, const char* title) override {};
 	virtual void plot_index_arrays() override {};
-	virtual void plot_data(ofstream& fplot, bool merge) override {};
+	virtual void plot_data(std::ofstream& fplot, bool merge) override {};
 	virtual void event(const char* options) override {};
-	virtual void doc_input(fstream& input) {};
+	virtual void doc_input(std::fstream& input) {};
 
 	//executive functions active
 	virtual void sizing_arrays() override;
-	virtual void vehicle_data(fstream& input) override;
+	virtual void vehicle_data(std::fstream& input) override;
 	virtual void read_tables(const char* file_name, Datadeck& datatable) override {};
 	virtual void com_index_arrays() override;
-	virtual void document(ostream& fdoc, const char* title, Document* doc_vehicle) override;
+	virtual void document(std::ostream& fdoc, const char* title, Document* doc_vehicle) override;
 	virtual Packet loading_packet_init(int num_cruise, int num_target, int num_satellite) override;
 	virtual Packet loading_packet(int num_cruise, int num_target, int num_satellite) override;
 

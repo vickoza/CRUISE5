@@ -2,6 +2,10 @@
 
 #include "global_header.hpp"
 #include "Datadeck.hpp"
+#include "Variable.hpp"
+#include "Packet.hpp"
+#include "Document.hpp"
+#include <fstream>
 
 ///////////////////////////////////////////////////////////////////////////////
 //Abstract base class: Cadac
@@ -74,17 +78,17 @@ public:
 	virtual void scrn_array() = 0;
 	virtual void plot_array() = 0;
 	virtual void scrn_banner() = 0;
-	virtual void tabout_banner(ofstream& ftabout, const char* title) = 0;
-	virtual void tabout_data(ofstream& ftabout) = 0;
-	virtual void vehicle_data(fstream& input) = 0;
+	virtual void tabout_banner(std::ofstream& ftabout, const char* title) = 0;
+	virtual void tabout_data(std::ofstream& ftabout) = 0;
+	virtual void vehicle_data(std::fstream& input) = 0;
 	virtual void read_tables(const char* file_name, Datadeck& datatable) = 0;
 	virtual void scrn_index_arrays() = 0;
 	virtual void scrn_data() = 0;
-	virtual void plot_banner(ofstream& fplot, const char* title) = 0;
+	virtual void plot_banner(std::ofstream& fplot, const char* title) = 0;
 	virtual void plot_index_arrays() = 0;
-	virtual void plot_data(ofstream& fplot, bool merge) = 0;
+	virtual void plot_data(std::ofstream& fplot, bool merge) = 0;
 	virtual void event(const char* options) = 0;
-	virtual void document(ostream& fdoc, const char* title, Document* doc_cruise3) = 0;
+	virtual void document(std::ostream& fdoc, const char* title, Document* doc_cruise3) = 0;
 	virtual void com_index_arrays() = 0;
 	virtual Packet loading_packet_init(int num_cruise, int num_target, int num_satellite) = 0;
 	virtual Packet loading_packet(int num_cruise, int num_target, int num_satellite) = 0;
