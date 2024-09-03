@@ -8,6 +8,7 @@
 
 #ifndef global_constants__HPP
 #define global_constants__HPP
+#include <numbers>
 #ifdef DIAGNOSTICS
 constexpr auto enableDiagostics{ true };
 #else
@@ -24,7 +25,7 @@ double const AGRAV=9.80675445;			//standard value of gravity acceleration - m/s^
 double const G=6.673e-11;				//universal gravitational constant - Nm^2/kg^2 
 double const EARTH_MASS=5.973e24;		//mass of the earth - kg 
 double const R=287.053;					//ideal gas constant - m^2/(K*s^2) 
-double const PI=3.1415927;				//circumference of unit diameter circle
+double const PI=std::numbers::pi;		//circumference of unit diameter circle
 double const EPS=1e-10;					//machine precision error
 double const SMALL=1.e-7;				//small real number
 int const ILARGE=9999;					//large integer number
