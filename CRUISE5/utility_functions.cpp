@@ -28,6 +28,7 @@
 
 #include "utility_header.hpp"
 #include "global_header.hpp"
+#include <array>
 
 using namespace std;
 
@@ -70,42 +71,43 @@ double integrate(const double &dydx_new,const double &dydx,const double &y,const
 
 void atmosphere76(double &rho,double &press,double &tempk, const double balt)
 {
-	double rearth(6369.0); //radius of the earth - km
-	double gmr(34.163195); //gas constant
-	double rhosl(1.22500); //sea level density - kg/m^3
-	double pressl(101325); //sea level pressure - Pa
-	double tempksl(288.15); //sea level temperature - dK
+	double const rearth(6369.0); //radius of the earth - km
+	double const gmr(34.163195); //gas constant
+	double const rhosl(1.22500); //sea level density - kg/m^3
+	double const pressl(101325); //sea level pressure - Pa
+	double const tempksl(288.15); //sea level temperature - dK
 
-	double htab[8]={0.0, 11.0, 20.0, 32.0, 47.0, 51.0, 71.0, 84.852}; //altitude
-	double ttab[8]={288.15, 216.65, 216.65, 228.65, 270.65, 270.65, 214.65, 186.946}; //temperture
-	double ptab[8]={1.0, 2.233611e-1, 5.403295e-2, 8.5666784e-3, 1.0945601e-3,
+	std::array<double,8> const htab{0.0, 11.0, 20.0, 32.0, 47.0, 51.0, 71.0, 84.852}; //altitude
+	std::array<double, 8> const ttab{288.15, 216.65, 216.65, 228.65, 270.65, 270.65, 214.65, 186.946}; //temperture
+	std::array<double, 8> const ptab{1.0, 2.233611e-1, 5.403295e-2, 8.5666784e-3, 1.0945601e-3,
 					6.6063531e-4, 3.9046834e-5, 3.68501e-6};  //pressure
-	double gtab[8]={-6.5, 0.0, 1.0, 2.8, 0.0, -2.8, -2.0, 0.0};   //temperture gradient
+	std::array<double, 8> const gtab{-6.5, 0.0, 1.0, 2.8, 0.0, -2.8, -2.0, 0.0};   //temperture gradient
 
 	double delta(0);
 
 	//convert geometric (m) to geopotential altitude (km)
-	double alt=balt/1000; 
-	double h=alt*rearth/(alt+rearth);
+	double const alt=balt/1000; 
+	double const h=alt*rearth/(alt+rearth);
 
 	//binary search determines altitude table entry i below actual altitude 
 	int i(0); //offset of first value in table
 	int j(7); //offset of last value in table
-	for( ; ; ){
-	  int k=(i+j)/2;     //integer division
-	  if(h<htab[k])
-	    j=k;
-	  else
-	    i=k;
-	  if(j<=(i+1))break;
-	}
+	do
+	{
+		int k = (i + j) / 2;     //integer division
+		if (h < htab[k])
+			j = k;
+		else
+			i = k;
+	} 
+	while (j > (i + 1));
 
 	//normalized temperature 'theta' from table look-up and gradient interpolation
-	double tgrad=gtab[i];
-	double tbase=ttab[i];
-	double deltah=h-htab[i];
-	double tlocal=tbase+tgrad*deltah;
-	double theta=tlocal/ttab[0]; 
+	double const& tgrad=gtab[i];
+	double const& tbase=ttab[i];
+	double const deltah=h-htab[i];
+	double const tlocal=tbase+tgrad*deltah;
+	double const theta=tlocal/ttab[0]; 
 	
 	//normalized pressure from hydrostatic equations 
 	if(tgrad==0)
@@ -114,11 +116,10 @@ void atmosphere76(double &rho,double &press,double &tempk, const double balt)
 	  delta=ptab[i]*pow((tbase/tlocal),(gmr/tgrad));
 
 	//normalized density
-	double sigma=delta/theta;
+	double const sigma=delta/theta;
 
 	//output
 	rho=rhosl*sigma;
 	press=pressl*delta;
 	tempk=tempksl*theta;
 }
-
