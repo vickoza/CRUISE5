@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/CRUISE5/traj.asc
+/CRUISE5/plot1.asc
+/CRUISE5/doc.asc
