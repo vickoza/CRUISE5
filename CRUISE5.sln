@@ -7,12 +7,24 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRUISE5", "CRUISE5\CRUISE5.
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Daig-Debug|x64 = Daig-Debug|x64
+		Daig-Debug|x86 = Daig-Debug|x86
+		Daig-Release|x64 = Daig-Release|x64
+		Daig-Release|x86 = Daig-Release|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Debug|x64.ActiveCfg = Daig-Debug|x64
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Debug|x64.Build.0 = Daig-Debug|x64
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Debug|x86.ActiveCfg = Daig-Debug|Win32
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Debug|x86.Build.0 = Daig-Debug|Win32
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Release|x64.ActiveCfg = Daig-Release|x64
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Release|x64.Build.0 = Daig-Release|x64
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Release|x86.ActiveCfg = Daig-Release|Win32
+		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Daig-Release|x86.Build.0 = Daig-Release|Win32
 		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Debug|x64.ActiveCfg = Debug|x64
 		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Debug|x64.Build.0 = Debug|x64
 		{5BFFD50A-0A33-429E-81F0-3B443E7297F5}.Debug|x86.ActiveCfg = Debug|Win32

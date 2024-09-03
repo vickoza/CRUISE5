@@ -29,8 +29,7 @@
 #include "utility_header.hpp"
 #include "global_header.hpp"
 #include <array>
-
-using namespace std;
+#include <numeric>
 
 
 
@@ -49,7 +48,7 @@ using namespace std;
 ///////////////////////////////////////////////////////////////////////////////
 double integrate(const double &dydx_new,const double &dydx,const double &y,const double &int_step)
 {
-	return y+(dydx_new+dydx)*int_step/2;
+	return y + std::midpoint(dydx_new, dydx) * int_step;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
